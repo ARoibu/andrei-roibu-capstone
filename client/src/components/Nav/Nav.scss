@@ -1,0 +1,32 @@
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    &__links{
+        display: flex;
+    }
+    &__generator{
+        text-decoration: none;
+        color: black;
+        &:hover{
+            border-bottom: 2px solid blue;
+            padding-bottom: 3px;
+            transition: .5s;
+        }
+    }
+    &__log{
+        text-decoration: none;
+        color: black;
+        margin-left: 20px;
+        &:hover{
+            border-bottom: 2px solid blue;
+            padding-bottom: 3px;
+            transition: .5s;
+        }
+    }
+    &--link{
+        text-decoration: none;
+    }
+}

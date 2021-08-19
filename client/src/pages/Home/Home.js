@@ -12,27 +12,39 @@ class Home extends React.Component {
 
     updateCategory = (category) => {
         console.log(category)
-        this.setState({category: category})
+        this.setState({category: category}, () => {
+            axios.get(`${API_URL}/exercises?category=${this.state.category}`)
+            .then((response) => {
+                this.setState({exercises: response.data})
+            }).catch((e) => {console.log(e)})
+        })
+        // .then(() => {
+        //     axios.get(`${API_URL}/exercises?category=${this.state.category}`)
+        // }).then((response) => {
+        //     this.setState({exercises: response.data})
+        // }).catch((e) => {
+        //     console.log(e);
+        // })
     }
 
-    componentDidMount() {
-        axios.get(`${API_URL}/exercises`)
-        .then((response) => {
-            this.setState({
-                exercises: response.data
-            });
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    }
+    // componentDidMount() {
+    //     axios.get(`${API_URL}/exercises`)
+    //     .then((response) => {
+    //         this.setState({
+    //             exercises: response.data
+    //         });
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
+    // }
 
     render() {
         return(
             <main>
                 <Hero />
                 <CreateExercise updateCategory={this.updateCategory}/>
-                <DisplayExercise />
+                <DisplayExercise exercises={this.state.exercises}/>
             </main>
         );
     }
