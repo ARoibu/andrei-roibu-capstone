@@ -1,15 +1,35 @@
-
+@use '../../partials/partials' as *;
 
 .nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 1rem;
+    @include tablet{
+        padding: 0 3rem;
+    }
+    &__logo{
+        width: 100px;
+        margin-bottom: -15px;
+        margin-top: -5px;
+        @include tablet{
+            width: 150px;
+        }
+    }
     &__links{
         display: flex;
+        justify-content: center;
     }
     &__generator{
         text-decoration: none;
         color: black;
+        margin-top: 18px;
+        font-size: 12px;
+        @include tablet{
+            font-size: 16px;
+            margin-top: 28px;
+            margin-right: 50px;
+        }
+        
         &:hover{
             border-bottom: 2px solid blue;
             padding-bottom: 3px;
@@ -19,7 +39,13 @@
     &__log{
         text-decoration: none;
         color: black;
-        margin-left: 20px;
+        margin-top: 18px;
+        font-size: 12px;
+        @include tablet{
+            font-size: 16px;
+            margin-top: 28px;
+            margin-left: 50px;
+        }
         &:hover{
             border-bottom: 2px solid blue;
             padding-bottom: 3px;

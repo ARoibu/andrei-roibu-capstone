@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Assistant;
+    src: url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+}
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+
+body{
+    font-family: Assistant;
+}
+
+$tablet-width: 767px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+        @content;
+    }   
+}
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }  
+}

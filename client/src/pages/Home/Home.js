@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Home.scss'
 import CreateExercise from '../../components/CreateExercise/CreateExercise';
 import DisplayExercise from '../../components/DisplayExercise/DisplayExercise';
 import Hero from '../../components/Hero/Hero';
@@ -41,8 +42,8 @@ class Home extends React.Component {
 
     render() {
         return(
-            <main>
-                <Hero />
+            <main className='home'>
+                <Hero className='home__hero' />
                 <CreateExercise updateCategory={this.updateCategory}/>
                 <DisplayExercise exercises={this.state.exercises}/>
             </main>

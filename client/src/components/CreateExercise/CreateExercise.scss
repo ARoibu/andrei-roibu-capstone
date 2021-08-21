@@ -5,4 +5,10 @@
     &__image{
         max-width: 100px;
     }
+    &__text{
+        width: 100%;
+        &-container{
+            padding: 0px 1rem;
+        }
+    }
 }

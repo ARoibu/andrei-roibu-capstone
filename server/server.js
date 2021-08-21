@@ -36,7 +36,13 @@ app.post('/api/logs', (req, res) => {
         date: req.body.date,
         exercise: req.body.exercise,
         weight: req.body.weight,
-        reps: req.body.reps
+        reps: req.body.reps,
+        weight2: req.body.weight2,
+        reps2: req.body.reps2,
+        weight3: req.body.weight3,
+        reps3: req.body.reps3,
+        weight4: req.body.weight4,
+        reps4: req.body.reps4,
     };
 
     logs.push(newLog);
