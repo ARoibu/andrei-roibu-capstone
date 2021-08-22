@@ -1,0 +1,31 @@
+@use '../../partials/partials' as *;
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.log{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // max-width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+
+    &__container{
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.57);
+        width: 320px;
+        margin: 20px;
+    }
+    &__date{
+        text-align: center;
+        text-decoration: underline;
+    }
+    &__exercise{
+        text-align: center;
+    }
+    &__table{
+        width: 100%;
+        text-align: center;
+    }
+}
