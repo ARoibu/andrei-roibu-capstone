@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { API_URL } from "../../util";
+import './CreateLog.scss'
 
 export default function CreateLog() {
     
@@ -33,33 +34,37 @@ export default function CreateLog() {
     };
 
     return(
-        <form onSubmit={submit}>
-            <input type='date' id='date' name='date'/>
-            <label for='date'>Date</label>
+        <form className='form' onSubmit={submit}>
+            {/* <label for='date'>Date</label><br/> */}
+            <input className='form__field form__field--date' type='date' id='date' required name='date'/><br/>
+            {/* <label for='exercise'>Exercise Name</label><br/> */}
+            <input className='form__field form__field--name' type='text' id='exercise' required placeholder='Exercise Name' name='exercise'/><br/>
                        
 
-            <div>
-            <input type='text' id='exercise' name='exercise'/>
-            <label for='exercise'>Exercise Name</label>
-            <input type='number' id='weight' name='weight'/>
-            <label for='weight'>Set 1 Weight Used (lbs)</label>
-            <input type='number' id='reps' name='reps'/>
-            <label for='reps'>Set 1 Number Of Reps</label>
-            <input type='number' id='weight2' name='weight2'/>
-            <label for='weight2'>Set 2 Weight Used (lbs)</label>
-            <input type='number' id='reps2' name='reps'/>
-            <label for='reps2'>Set 2 Number Of Reps</label>
-            <input type='number' id='weight3' name='weight3'/>
-            <label for='weight3'>Set 3 Weight Used (lbs)</label>
-            <input type='number' id='reps3' name='reps3'/>
-            <label for='reps3'>Set 3 Number Of Reps</label>
-            <input type='number' id='weight4' name='weight4'/>
-            <label for='weight4'>Set 4 Weight Used (lbs)</label>
-            <input type='number' id='reps4' name='reps4'/>
-            <label for='reps4'>Set 4 Number Of Reps</label>
+            <div className='form__container'>
+                <div>
+                    {/* <label for='weight'>Set 1 Weight Used (lbs)</label><br/> */} 
+                    <input className='form__field' type='number' required  placeholder='Set 1 lbs' id='weight' name='weight'/><br/>
+                    {/* <label for='weight2'>Set 2 Weight Used (lbs)</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 2 lbs' id='weight2' name='weight2'/><br/>
+                    {/* <label for='weight3'>Set 3 Weight Used (lbs)</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 3 lbs' id='weight3' name='weight3'/><br/>
+                    {/* <label for='weight4'>Set 4 Weight Used (lbs)</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 4 lbs' id='weight4' name='weight4'/><br/>
+                </div>
+                <div>
+                    {/* <label for='reps'>Set 1 Number Of Reps</label><br/> */}
+                    <input className='form__field' type='number' required  placeholder='Set 1 reps' id='reps' name='reps'/><br/>          
+                    {/* <label for='reps2'>Set 2 Number Of Reps</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 2 reps' id='reps2' name='reps'/><br/>
+                    {/* <label for='reps3'>Set 3 Number Of Reps</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 3 reps' id='reps3' name='reps3'/><br/>
+                    {/* <label for='reps4'>Set 4 Number Of Reps</label><br/> */}
+                    <input className='form__field' type='number' placeholder='Set 4 reps' id='reps4' name='reps4'/><br/>
+                </div>
             </div>
 
-            <input type='submit' value='SUBMIT'/>
+            <input className='form__button' type='submit' value='SUBMIT'/>
 
         </form>
     )

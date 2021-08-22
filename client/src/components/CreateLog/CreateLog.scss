@@ -1,0 +1,53 @@
+@use '../../partials/partials' as *;
+
+.form{
+    width: 320px;
+    margin: auto;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 5px;
+    padding: 20px;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__field{
+        padding: 10px;
+        margin: 10px 0;
+        width: 130px;
+        &--date{
+            width: calc(100% - 25px);
+        }
+        &--name{
+            width: calc(100% - 25px);
+        }
+    }
+    &__button{
+        width: 100%;
+        margin: auto;
+        border: none;
+	background: #404040;
+	color: #ffffff;
+	font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	transition: all 0.3s ease 0s;
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    &:hover{
+        color: #404040 !important;
+	font-weight: 700 !important;
+    width: 200px;
+	letter-spacing: 3px;
+	background: none;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.3s ease 0s;
+    }
+    }
+}
