@@ -1,5 +1,17 @@
 import './CreateExercise.scss';
 import {Link} from 'react-router-dom';
+import abs from '../../assets/images/abs.jpg';
+import back from '../../assets/images/back.jpg';
+import bicep from '../../assets/images/bicep.jpg';
+import chest from '../../assets/images/chest.jpg';
+import legs from '../../assets/images/legs.jpg';
+import shoulders from '../../assets/images/shoulders.jpg';
+import tricep from '../../assets/images/tricep.jpg';
+
+
+
+
+
 export default function CreateExercise(props) {
     return(
         <div className='create-exercise'>
@@ -14,11 +26,11 @@ export default function CreateExercise(props) {
                 regular gym routine within a matter of time. We all have our go-to favourite
                 exercises, but sometimes what all we need in order to smash through the plateau
                 is simply to switch it up. This will throw off your body enough for muscles to
-                tear again and cause soreness as well as gains. </p>
+                tear again and cause soreness as well as gains.<br/><br/>Seeing progress in the mirror is very difficult, since we see ourselves every day
+                and cannot perceive very miniscule day-to-day changes. </p>
                 </div>
                 <div className='create-exercise__text-container--right'>
-                    <p className='create-exercise__text'>Seeing progress in the mirror is very difficult, since we see ourselves every day
-                and cannot perceive very miniscule day-to-day changes. Progress photos come in
+                    <p className='create-exercise__text'> Progress photos come in
                 handy here, but it still can take quite some time to see progress even in photos.
                 This can be discouraging. Fear not however, since differences in numbers are much
                 more noticable and we can use this to our advantage by quantifying and logging
@@ -31,52 +43,77 @@ export default function CreateExercise(props) {
                 interested in, and a list of suggested exercises will appear.</p>
                 </div>
             </div>    
+            
+            <div className='create-exercise__generator-title-container'>
+                <h2 className='create-exercise__text'>Workout Generator</h2>
+                <p className='create-exercise__text'>Please select a muscle category:</p>
+            </div>
 
-            <h2 className='create-exercise__text'>Workout Generator</h2>
-            <p className='create-exercise__text'>Please select a muscle category:</p>
-
-            <div>
-            {props.updateCategory && <img onClick={() => {
+            <div className='create-exercise__button-container'>
+                
+                {props.updateCategory && <div onClick={() => {
                 props.updateCategory("Chest")
-            }} className='create-exercise__image' src='http://cdn.shopify.com/s/files/1/0038/0878/8544/articles/FeaturedImage_PulledChestMuscle.jpg?v=1592870496' alt='chest muscles drawing'/>}
-            </div>
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={chest} alt='chest muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>CHEST</div>
+                </div>
+                </div>}
 
-            <div>
-            {props.updateCategory && <img onClick={() => {
+                {props.updateCategory && <div onClick={() => {
                 props.updateCategory("Shoulders")
-            }} className='create-exercise__image' src='https://www.sportsinjuryclinic.net/wp-content/uploads/2018/08/shoulder-pain800-800x426.jpg' alt='shoulder muscles drawing'/>}
-            </div>
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={shoulders} alt='shoulder muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>SHOULDERS</div>
+                </div>
+                </div>}
 
-            <div>
-            {props.updateCategory && <img onClick={() => {
-                props.updateCategory("Triceps")
-            }} className='create-exercise__image' src='https://i.shgcdn.com/c39f9e9e-8e0a-4fa9-9ead-7ab7c3415c9d/-/format/auto/-/preview/3000x3000/-/quality/lighter/' alt='triceps muscles drawing'/>}
-            </div>
-
-            <div>
-            {props.updateCategory && <img onClick={() => {
-                props.updateCategory("Back")
-            }} className='create-exercise__image' src='https://global-uploads.webflow.com/5d1d0d3f53ced35a29dbe169/5fd24b8aca69b1ab783290f8_hwYEbGij-iDlBzmrySBuACZL5sCcvTecFOExhg20NIXFyTQ9Q55fzhXIDSiMNesu5mXBOSrHysn3h57LjwtdKrBnUKb_SUy0Fmy6E0ZRTIdF0naix0TLZkNxnkIbhlrsJY4bb6bb.png' alt='back muscle diagram'/>}
-            </div>
-
-            <div>
-            {props.updateCategory && <img onClick={() => {
-                props.updateCategory("Biceps")
-            }} className='create-exercise__image' src='https://chiroyogaalignment.com/wp-content/uploads/2021/01/Biceps-Muscles-1024x754-1.jpg' alt='biceps muscle drawing'/>}
-            </div>
-
-            <div>
-            {props.updateCategory && <img onClick={() => {
+                {props.updateCategory && <div onClick={() => {
                 props.updateCategory("Legs")
-            }} className='create-exercise__image' src='https://1xw7c62t8pgj1bq3qetvvsg1-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/Leg-Muscles-Running.jpg' alt='leg muscles drawing'/>}
-            </div>
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={legs} alt='leg muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>LEGS</div>
+                </div>
+                </div>}
 
-            <div>
-            {props.updateCategory && <img onClick={() => {
+                {props.updateCategory && <div onClick={() => {
+                props.updateCategory("Back")
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={back} alt='back muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>BACK</div>
+                </div>
+                </div>}
+
+                {props.updateCategory && <div onClick={() => {
+                props.updateCategory("Biceps")
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={bicep} alt='bicep muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>BICEPS</div>
+                </div>
+                </div>}
+
+                {props.updateCategory && <div onClick={() => {
+                props.updateCategory("Triceps")
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={tricep} alt='tricep muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>TRICEPS</div>
+                </div>
+                </div>}
+
+                {props.updateCategory && <div onClick={() => {
                 props.updateCategory("Abs")
-            }} className='create-exercise__image' src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/six-pack-anatomy-1555515082.jpg?crop=1xw:1xh;center,top&resize=480:*' alt='chest muscles drawing'/>}
+                }} className='create-exercise__button-wrapper'>
+                <img  className='create-exercise__image' src={abs} alt='ab muscles drawing'/>
+                <div className='create-exercise__overlay'>
+                    <div className='create-exercise__overlay-text'>ABS</div>
+                </div>
+                </div>}
             </div>
-        
         </div>
     )
 }

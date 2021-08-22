@@ -1,14 +1,78 @@
-
+@use '../../partials/partials' as *;
 
 .create-exercise{
-
+   
     &__image{
-        max-width: 100px;
+        max-width: 200px;
+        
     }
     &__text{
-        width: 100%;
+        
         &-container{
             padding: 0px 1rem;
+            @include tablet{
+                display: flex;
+                justify-content: center;
+            }
+            @include desktop{
+                width: 1000px;
+                margin: auto;
+            }
+            &--right{
+                @include tablet{
+                    width: 50%;
+                    margin-left: 10px;
+                    margin-top: 40px;
+                } 
+            }
+            &--left{
+                @include tablet{
+                    width: 50%;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &__generator-title-container{
+        padding: 0 1rem;
+        @include desktop{
+            width: 1000px;
+            margin: auto;
+        }
+    }
+    &__button-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 900px;
+        margin: auto;
+    }
+    &__button-wrapper{
+        position: relative;
+        &:hover .create-exercise__overlay{
+            opacity: 1;
+        }
+    }
+    &__overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: white;
+        &-text{
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
     }
 }
