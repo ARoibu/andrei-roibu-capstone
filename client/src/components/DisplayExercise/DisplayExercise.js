@@ -13,9 +13,9 @@ const DisplayExercise = ({exercises}) => {
                         <div className='display-exercise__container'>
                             <img className='display-exercise__image' src={data.image}/>
                             <img className='display-exercise__image' src={data.image2}/>
-                            <h2>{data.name}</h2>
-                            <p>{data.description}</p>
-                            <Link>{data.videolink}</Link>
+                            <h2 className='display-exercise__title'>{data.name}</h2>
+                            <p className='display-exercise__description'>{data.description}</p>
+                            <a className='display-exercise__link' href={data.videolink}>WATCH VIDEO</a>
                         </div>
                     );
                 })}
