@@ -3,6 +3,7 @@ const app = express();
 const exercises = require("./data/capstone.json");
 const cors = require('cors');
 const fs = require('fs');
+const uniqid = require('uniqid');
 
 
 app.use(cors());
@@ -33,6 +34,7 @@ app.get('/api/logs', (req, res) => {
 app.post('/api/logs', (req, res) => {
     const logs = getLogs();
     const newLog = {
+        id: uniqid(),
         date: req.body.date,
         exercise: req.body.exercise,
         weight: req.body.weight,
@@ -45,9 +47,19 @@ app.post('/api/logs', (req, res) => {
         reps4: req.body.reps4,
     };
 
-    logs.push(newLog);
+    logs.unshift(newLog);
     fs.writeFileSync('./data/logs.json', JSON.stringify(logs));
     res.json(logs);
+});
+
+app.delete('/api/delete/:id', (req, res) => {
+    const logs = getLogs();
+    let itemIndex = logs.findIndex(
+        (log) => log.id == req.params.id
+    );
+    logs.splice(itemIndex, 1);
+    fs.writeFileSync('./data/logs.json', JSON.stringify(logs));
+    res.send(`${req.params.id}`);
 });
 
 app.listen(8080, () => {

@@ -14,31 +14,21 @@ class Home extends React.Component {
     updateCategory = (category) => {
         console.log(category)
         this.setState({category: category}, () => {
-            axios.get(`${API_URL}/exercises?category=${this.state.category}`)
+            axios.get(`${API_URL}/exercises?category=${category}`)
             .then((response) => {
+                console.log(response.data)
                 this.setState({exercises: response.data})
             }).catch((e) => {console.log(e)})
         })
-        // .then(() => {
-        //     axios.get(`${API_URL}/exercises?category=${this.state.category}`)
-        // }).then((response) => {
-        //     this.setState({exercises: response.data})
-        // }).catch((e) => {
-        //     console.log(e);
-        // })
+  
     }
 
-    // componentDidMount() {
-    //     axios.get(`${API_URL}/exercises`)
-    //     .then((response) => {
-    //         this.setState({
-    //             exercises: response.data
-    //         });
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     });
-    // }
+    componentDidMount() {
+        console.log(this.props.match.params);
+        if (this.props.match.params.id) {
+            this.updateCategory(this.props.match.params.id)
+        }
+    }
 
     render() {
         return(

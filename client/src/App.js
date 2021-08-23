@@ -10,6 +10,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path='/' component={Home}/>
+          <Route exact path='/category/:id' component={Home}/>
           <Route exact path='/log' component={Log}/>
         </Switch>
       </BrowserRouter>

@@ -1,5 +1,8 @@
+import axios from 'axios';
+import { API_URL } from '../../util';
 import './DisplayLog.scss'
-export default function DisplayLog({logs}) {
+export default function DisplayLog({logs, onDelete}) {
+  
     return(
         <div className='log'>
             {logs
@@ -35,7 +38,7 @@ export default function DisplayLog({logs}) {
                             <td>{data.reps4}</td>
                         </tr>
                     </table>
-                    
+                    <button className='log__button' onClick={() => onDelete(data.id)}>Delete</button>
                     </div>
                 );
             })}

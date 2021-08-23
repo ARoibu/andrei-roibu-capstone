@@ -56,7 +56,7 @@ export default function CreateLog() {
                     {/* <label for='reps'>Set 1 Number Of Reps</label><br/> */}
                     <input className='form__field' type='number' required  placeholder='Set 1 reps' id='reps' name='reps'/><br/>          
                     {/* <label for='reps2'>Set 2 Number Of Reps</label><br/> */}
-                    <input className='form__field' type='number' placeholder='Set 2 reps' id='reps2' name='reps'/><br/>
+                    <input className='form__field' type='number' placeholder='Set 2 reps' id='reps2' name='reps2'/><br/>
                     {/* <label for='reps3'>Set 3 Number Of Reps</label><br/> */}
                     <input className='form__field' type='number' placeholder='Set 3 reps' id='reps3' name='reps3'/><br/>
                     {/* <label for='reps4'>Set 4 Number Of Reps</label><br/> */}
